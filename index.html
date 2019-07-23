@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+<!-- 引入组件库 -->
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .demo{
+            height: 500px;
+            margin: auto;
+            overflow: auto;
+
+        }
+        .demo1{
+            height: 800px;
+            background: blue;
+            
+        }
+        .po{
+            position: absolute;
+            left:0;
+            top:0;
+            height: 100px;
+            width: 100%;
+            background: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="po"></div>
+        <div class="demo1"></div>
+    </div>
+</body>
+</html>
+<script>
+    var demo1 = document.getElementsByClassName('demo1')[0];
+    var demo = document.getElementsByClassName('demo')[0];
+    var po = document.getElementsByClassName('po')[0];
+    demo.addEventListener('scroll',function (e){
+        if(e.target.scrollTop >= 100){
+           po.style.display = 'block'; 
+        }else{
+            po.style.display = 'none'; 
+        }
+        console.log(e);
+    },false)
+</script>
